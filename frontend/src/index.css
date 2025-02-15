@@ -1,0 +1,29 @@
+.App {
+  min-height: 100vh;
+  max-height: 100%;
+  width: 100vw;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #000;
+}
+.input-container{
+  background-color: antiquewhite;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.parent{
+  display: flex;
+  flex-direction: row;
+  background: red;
+}
+.li{
+
+
+  width: 300px;
+}
+.icon{
+  height: 16px;
+}
