@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, ListGroup } from "react-bootstrap"
+import { Button } from "react-bootstrap"
 function App() {
   const [task, setTask] = useState<string>("");
   const [tasks, setTasks] = useState<any[]>([]); // ✅ Ensure it's an array
@@ -12,7 +12,7 @@ function App() {
       return;
     }
     try {
-      const res = await axios.post("https://todo-app-u9pe.onrender.com/tasks", { task }); // Send as object
+      const res = await axios.post("https://todo-app-jfjd.onrender.com/tasks", { task }); // Send as object
       console.log("task submitted", res.data);
 
       // ✅ Add new task to existing tasks
@@ -27,7 +27,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("https://todo-app-u9pe.onrender.com/tasks");
+        const res = await axios.get("https://todo-app-jfjd.onrender.com/tasks");
 
         setTasks(res.data); // ✅ Directly set fetched tasks
       } catch (err) {
@@ -38,7 +38,7 @@ function App() {
   }, [tasks]);
 
   const DT = async (id) => {
-    const deleted = await axios.delete(`https://todo-app-u9pe.onrender.com/tasks/${id}`)
+    const deleted = await axios.delete(`https://todo-app-jfjd.onrender.com/tasks/${id}`)
     setTasks((prevTasks) => prevTasks.filter((task) => task._id !== id));
   }
   return (
